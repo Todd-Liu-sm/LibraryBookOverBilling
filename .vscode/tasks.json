@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译 class5",
+            "type": "shell",
+            "command": "javac -encoding UTF-8 -d \"${workspaceFolder}/out\" \"${workspaceFolder}/src/Main.java\" \"${workspaceFolder}/src/items/Book.java\" \"${workspaceFolder}/src/items/DVD.java\" \"${workspaceFolder}/src/items/Journal.java\" \"${workspaceFolder}/src/items/LoanItem.java\" \"${workspaceFolder}/src/items/Renewable.java\" \"${workspaceFolder}/src/service/FeeRule.java\" \"${workspaceFolder}/src/service/LoanRecord.java\" \"${workspaceFolder}/src/service/LoanService.java\"",
+            "problemMatcher": [
+                "$javac"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "运行 class5 Main",
+            "request": "launch",
+            "mainClass": "class5.main.Main",
+            "classPaths": [
+                "${workspaceFolder}/out"
+            ],
+            "preLaunchTask": "编译 class5"
+        }
+    ]
+}
