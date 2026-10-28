@@ -15,7 +15,11 @@ public class Main {
         System.out.println("Book: " + book1.getTitle() + ", ID: " + book1.getId() + ", Type: " + book1.getClass().getSimpleName());
         System.out.println("Journal: " + journal1.getTitle() + ", ID: " + journal1.getId() + ", Type: " + journal1.getClass().getSimpleName());
         System.out.println("DVD: " + dvd1.getTitle() + ", ID: " + dvd1.getId() + ", Type: " + dvd1.getClass().getSimpleName());
-
+        //用LoanItem[] 数组装进三种子类对象，用一个循环遍历、统一调用calculateRentalFee
+        LoanItem[] loanItems = {book1, journal1, dvd1};
+        for (LoanItem item : loanItems) {
+            System.out.println(item.getTitle() + " rental fee for 5 days: $" + item.calculateRentalFee(5));
+        }
 
         //计算租金
         // System.out.println(book1.getTitle() + " rental fee for 5 days: $" + book1.calculateRentalFee(5));

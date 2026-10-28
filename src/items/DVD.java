@@ -1,5 +1,6 @@
 package items;
-
+import items.Renewable;
+import service.FeeRule;
 public class DVD extends LoanItem implements Renewable {
     //DVD类：继承LoanItem类，实现Renewable接口
     public DVD(String id, String title, double dailyRate) {
@@ -8,7 +9,15 @@ public class DVD extends LoanItem implements Renewable {
 
     @Override
     public double calculateRentalFee(int days) {
-        return getDailyRate() * days;
+        double fee = getDailyRate() * days;
+        if (fee < FeeRule.getMinimumFee()) {
+            return FeeRule.getMinimumFee();
+        }
+        if (days > FeeRule.getDvdGracePeriod()) {
+            return getDailyRate() * days;
+        } else {
+            return 0.0; // 在宽限期内不收费
+        }
     }
 
     @Override
